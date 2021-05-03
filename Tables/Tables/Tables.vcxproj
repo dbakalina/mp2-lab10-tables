@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="TArrayTables.h" />
+    <ClInclude Include="TScanTables.h" />
+    <ClInclude Include="TSortTables.h" />
     <ClInclude Include="TTables.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

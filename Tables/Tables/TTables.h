@@ -1,12 +1,10 @@
 #pragma once
-
 #include <iostream>
 #include <fstream>
 #include <string>
 
 using namespace std;
 
-//typedef int TKey;
 typedef string TKey;
 typedef int TValue;
 
@@ -20,67 +18,55 @@ protected:
 	int DataCount; 
 	int Eff; 
 public:
-	//
-	//
-	TTable() {
+	TTable() 
+	{
 		Eff = 0;
 		DataCount = 0;
 	}
-	//
 
 	~TTable() {}
 
-	//
-	int GetDataCount() {
+	int GetDataCount() 
+	{
 		return DataCount;
 	}
-	
-	//
+
 	int GetEff() {
 		return Eff;
 	}
-	//
-	
-	//
-	virtual TRecord GetCurr() const = 0;
 
-	//
+	void ClearEfficiency()
+	{
+		Eff = 0;
+	}
+
 	bool IsEmpty() {
 		return DataCount == 0;
 	}
-	
-	//
+
+	virtual TRecord GetCurr() const = 0;
+
 	virtual bool IsFull() const = 0;
 
-
-	//
 	virtual bool Find(TKey key) = 0;
-	
-	//
+
 	virtual void Insert(TRecord rec) = 0;
 
 	virtual void Delete(TKey key) = 0;
 	
 	virtual void GoNext() = 0;
-	//
 	
-	//
 	virtual void Reset() = 0;
-	//
 	
-	//
 	virtual bool IsEnd() = 0;
 
-	//
 	void Print() {
 		for (Reset(); !IsEnd(); GoNext())
 		{
 			cout << GetCurr().key << " - " << GetCurr().val << endl;
 		}
 	}
-	//
 	
-	//
 	void Read(char* pFileName)
 	{
 		string str = "";
