@@ -1,0 +1,10 @@
+1001 cat
+1003 dog
+1010 horse
+1008 parrot
+1002 hamster
+1004 pig
+1005 sheep
+1006 goat
+1007 cow
+1009 rabbit
